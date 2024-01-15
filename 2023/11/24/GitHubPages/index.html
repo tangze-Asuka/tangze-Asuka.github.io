@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>关于管理 GitHub Pages 站点的自定义域 | 西园寺世界的日记</title><meta name="author" content="西园寺世界"><meta name="copyright" content="西园寺世界"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="管理 GitHub Pages 站点的自定义域本文内容 关于自定义域配置 配置子域 配置 apex 域 配置顶点域和 www 子域变体 自定义域的 DNS 记录 删除自定义域 保护自定义域 延伸阅读  您可以设置或更新某些 DNS 记录和仓库设置，以将 GitHub Pages 站点的默认域指向自定义域。 Platform navigationMacWindowsLinux GitHub Page">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于管理 GitHub Pages 站点的自定义域">
+<meta property="og:url" content="https://tangze-asuka.github.io/2023/11/24/GitHubPages/index.html">
+<meta property="og:site_name" content="西园寺世界的日记">
+<meta property="og:description" content="管理 GitHub Pages 站点的自定义域本文内容 关于自定义域配置 配置子域 配置 apex 域 配置顶点域和 www 子域变体 自定义域的 DNS 记录 删除自定义域 保护自定义域 延伸阅读  您可以设置或更新某些 DNS 记录和仓库设置，以将 GitHub Pages 站点的默认域指向自定义域。 Platform navigationMacWindowsLinux GitHub Page">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.ssdnodes.com/blog/wp-content/uploads/2020/08/what-is-github.png">
+<meta property="article:published_time" content="2023-11-24T11:20:41.000Z">
+<meta property="article:modified_time" content="2023-11-26T08:19:04.808Z">
+<meta property="article:author" content="西园寺世界">
+<meta property="article:tag" content="GitHub Pages">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.ssdnodes.com/blog/wp-content/uploads/2020/08/what-is-github.png">
+<meta property="fb:admins" content="optional"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://tangze-asuka.github.io/2023/11/24/GitHubPages/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '关于管理 GitHub Pages 站点的自定义域',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-11-26 16:19:04'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/113.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://blog.ssdnodes.com/blog/wp-content/uploads/2020/08/what-is-github.png')"><nav id="nav"><span id="blog-info"><a href="/" title="西园寺世界的日记"><span class="site-name">西园寺世界的日记</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">关于管理 GitHub Pages 站点的自定义域</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-24T11:20:41.000Z" title="发表于 2023-11-24 19:20:41">2023-11-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-26T08:19:04.808Z" title="更新于 2023-11-26 16:19:04">2023-11-26</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="关于管理 GitHub Pages 站点的自定义域"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2023/11/24/GitHubPages/#post-comment"><span class="fb-comments-count" data-href="https://tangze-asuka.github.io/2023/11/24/GitHubPages/"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="管理-GitHub-Pages-站点的自定义域"><a href="#管理-GitHub-Pages-站点的自定义域" class="headerlink" title="管理 GitHub Pages 站点的自定义域"></a>管理 GitHub Pages 站点的自定义域</h1><h2 id="本文内容"><a href="#本文内容" class="headerlink" title="本文内容"></a>本文内容</h2><ul>
+<li>关于自定义域配置</li>
+<li>配置子域</li>
+<li>配置 apex 域</li>
+<li>配置顶点域和 www 子域变体</li>
+<li>自定义域的 DNS 记录</li>
+<li>删除自定义域</li>
+<li>保护自定义域</li>
+<li>延伸阅读</li>
+</ul>
+<p>您可以设置或更新某些 DNS 记录和仓库设置，以将 GitHub Pages 站点的默认域指向自定义域。</p>
+<h2 id="Platform-navigation"><a href="#Platform-navigation" class="headerlink" title="Platform navigation"></a>Platform navigation</h2><p><a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site?platform=mac">Mac</a><a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site?platform=windows">Windows</a><a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site?platform=linux">Linux</a></p>
+<p>GitHub Pages 适用于具有 GitHub Free 和组织的 GitHub Free 的公共仓库，以及具有 GitHub Pro、GitHub Team、GitHub Enterprise Cloud 和 GitHub Enterprise Server 的公共和私有仓库。 有关详细信息，请参阅“<a target="_blank" rel="noopener" href="https://docs.github.com/zh/get-started/learning-about-github/githubs-plans">GitHub 的计划</a>”。</p>
+<p>拥有仓库管理员权限的人可为 GitHub Pages 站点配置自定义域。</p>
+<h2 id="关于自定义域配置"><a href="#关于自定义域配置" class="headerlink" title="关于自定义域配置"></a><a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#about-custom-domain-configuration">关于自定义域配置</a></h2><p>使用 DNS 提供程序配置自定义域之前，请确保将自定义域添加到您的 GitHub Pages 站点。 使用 DNS 提供程序配置自定义域而不将其添加到 GitHub，可能导致其他人能够在您的某个子域上托管站点。</p>
+<p><code>dig</code> 命令可用于验证 DNS 记录的配置是否正确，它未包含在 Windows 中。 必须安装 <a target="_blank" rel="noopener" href="https://www.isc.org/bind/">BIND</a> 才能验证 DNS 记录是否配置正确。</p>
+<p>注意：传播 DNS 更改可能需要长达 24 小时的时间。</p>
+<h2 id="配置子域"><a href="#配置子域" class="headerlink" title="配置子域"></a><a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain">配置子域</a></h2><p>要设置 <code>www</code> 或自定义子域（例如 <code>www.example.com</code> 或 <code>blog.example.com</code>），必须在存储库设置中添加你的域。 然后，通过 DNS 提供商配置 CNAME 记录。</p>
+<ol>
+<li><p>在 GitHub 上，导航到站点的仓库。</p>
+</li>
+<li><p>在存储库名称下，单击 “设置”。 如果看不到“设置”选项卡，请选择“”下拉菜单，然后单击“设置”********。</p>
+<p><img src="https://docs.github.com/assets/cb-28266/images/help/repository/repo-actions-settings.png" alt="存储库标头的屏幕截图，其中显示了选项卡。 “设置”选项卡以深橙色边框突出显示。"></p>
+</li>
+<li><p>在边栏的“代码和自动化”部分中，单击“ Pages”。</p>
+</li>
+<li><p>在“自定义域”下，键入自定义域，然后单击“保存”。 如果从分支发布站点，会创建一个提交，将 <code>CNAME</code> 直接文件添加到源分支的根目录。 如果使用自定义 GitHub Actions 工作流发布站点，则不会创建 <code>CNAME</code> 文件。 有关发布源的详细信息，请参阅“<a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">配置 GitHub Pages 站点的发布源</a>”。</p>
+<p>注意：如果自定义域是国际化域名，则必须输入 Punycode 编码版本。</p>
+<p>有关 Punycodes 的详细信息，请参阅<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Internationalized_domain_name">国际化域名</a>。</p>
+</li>
+<li><p>导航到 DNS 提供程序并创建 <code>CNAME</code> 记录，使子域指向站点的默认域。 例如，如果要使用子域 <code>www.example.com</code> 作为你的用户站点，请创建将 <code>www.example.com</code> 指向 <code>&lt;user&gt;.github.io</code> 的 <code>CNAME</code> 记录。 如果要使用子域 <code>another.example.com</code> 作为你的组织站点，请创建将 <code>another.example.com</code> 指向 <code>&lt;organization&gt;.github.io</code> 的 <code>CNAME</code> 记录。 <code>CNAME</code> 记录应始终指向 <code>&lt;user&gt;.github.io</code> 或 <code>&lt;organization&gt;.github.io</code>，排除存储库名称。 有关如何创建正确记录的更多信息，请参阅 DNS 提供程序的文档。 有关站点的默认域的详细信息，请参阅“<a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites">关于 GitHub Pages</a>”。</p>
+<p>警告：我们强烈建议勿使用通配符 DNS 记录，例如 <code>*.example.com</code>。 即使验证域，这些记录也会立即面临域接管风险。 例如，如果验证 <code>example.com</code>，这会阻止某人使用 <code>a.example.com</code>，但他们仍可以接管 <code>b.a.example.com</code>（由通配符 DNS 记录所涵盖）。 有关详细信息，请参阅“<a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages">验证 GitHub Pages 的自定义域</a>”。</p>
+</li>
+<li><p>打开Git Bash。</p>
+</li>
+<li><p>要确认 DNS 记录配置正确，请使用 <code>dig</code> 命令，将 <a target="_blank" rel="noopener" href="http://www.example.com/">WWW.EXAMPLE.COM</a> 替换为子域。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">dig WWW.EXAMPLE.COM +nostats +nocomments +nocmd</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">;WWW.EXAMPLE.COM.                    IN      A</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">WWW.EXAMPLE.COM.             3592    IN      CNAME   YOUR-USERNAME.github.io.</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">YOUR-USERNAME.github.io.      43192   IN      CNAME   GITHUB-PAGES-SERVER .</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">GITHUB-PAGES-SERVER .         22      IN      A       192.0.2.1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果你使用静态站点生成器在本地构建站点并将生成的文件推送到 GitHub，请将添加 CNAME 文件的提交拉取到本地存储库。 有关详细信息，请参阅“<a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/troubleshooting-custom-domains-and-github-pages#cname-errors">自定义域和 GitHub Pages 疑难解答</a>”。</p>
+</li>
+<li><p>（可选）若要为站点强制实施 HTTPS 加密，请选择“强制实施 HTTPS”。 可能要过 24 小时才能使用此选项。 有关详细信息，请参阅“<a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https">使用 HTTPS 保护 GitHub Pages 站点</a>”。</p>
+</li>
+</ol>
+<p>—-</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://tangze-asuka.github.io">西园寺世界</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://tangze-asuka.github.io/2023/11/24/GitHubPages/">https://tangze-asuka.github.io/2023/11/24/GitHubPages/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://tangze-asuka.github.io" target="_blank">西园寺世界的日记</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/GitHub-Pages/">GitHub Pages</a></div><div class="post_share"><div class="social-share" data-image="https://blog.ssdnodes.com/blog/wp-content/uploads/2020/08/what-is-github.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2023/11/25/new/" title="互联网历史博物馆"><img class="cover" src="https://fc.sinaimg.cn/large/006BNqYCly1hjufkbuin2j31qa0v6kjl.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">互联网历史博物馆</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="fb-comments" data-colorscheme="light" data-numposts="10" data-order-by="social" data-width="100%"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/113.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">西园寺世界</div><div class="author-info__description">个人博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/tangze-Asuka/tangze-Asuka.github.io"><i class="fab fa-github"></i><span>Github</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">我车里有空调</div></div><div class="card-widget"><div class="item-headline"><i></i><span>待下一次寒蝉鸣泣之时</span></div><div class="item-content"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=240 height=86 src="//music.163.com/outchain/player?type=2&id=786262&auto=0&height=66"></iframe></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%A1%E7%90%86-GitHub-Pages-%E7%AB%99%E7%82%B9%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F"><span class="toc-number">1.</span> <span class="toc-text">管理 GitHub Pages 站点的自定义域</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E6%96%87%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">本文内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Platform-navigation"><span class="toc-number">1.2.</span> <span class="toc-text">Platform navigation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.</span> <span class="toc-text">关于自定义域配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%AD%90%E5%9F%9F"><span class="toc-number">1.4.</span> <span class="toc-text">配置子域</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/01/16/My-First-Post/" title="把Gemini Pro 部署到Cloudflare Workers"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="把Gemini Pro 部署到Cloudflare Workers"/></a><div class="content"><a class="title" href="/2024/01/16/My-First-Post/" title="把Gemini Pro 部署到Cloudflare Workers">把Gemini Pro 部署到Cloudflare Workers</a><time datetime="2024-01-15T16:16:16.000Z" title="发表于 2024-01-16 00:16:16">2024-01-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/16/duse-md/" title="duse.md"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="duse.md"/></a><div class="content"><a class="title" href="/2024/01/16/duse-md/" title="duse.md">duse.md</a><time datetime="2024-01-15T16:14:38.000Z" title="发表于 2024-01-16 00:14:38">2024-01-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/16/duse/" title="duse"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="duse"/></a><div class="content"><a class="title" href="/2024/01/16/duse/" title="duse">duse</a><time datetime="2024-01-15T16:14:07.000Z" title="发表于 2024-01-16 00:14:07">2024-01-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/18/Awesome-Redteam/" title="Awesome-Redteam"><img src="https://s2.loli.net/2023/12/19/Ql8EzVbqK7cXvCp.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Awesome-Redteam"/></a><div class="content"><a class="title" href="/2023/12/18/Awesome-Redteam/" title="Awesome-Redteam">Awesome-Redteam</a><time datetime="2023-12-18T03:43:53.000Z" title="发表于 2023-12-18 11:43:53">2023-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/26/Higurashi/" title="寒蝉鸣泣之时 系列【PC】"><img src="https://so1.360tres.com/t019088bfb14aaf9799.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="寒蝉鸣泣之时 系列【PC】"/></a><div class="content"><a class="title" href="/2023/11/26/Higurashi/" title="寒蝉鸣泣之时 系列【PC】">寒蝉鸣泣之时 系列【PC】</a><time datetime="2023-11-26T07:06:09.000Z" title="发表于 2023-11-26 15:06:09">2023-11-26</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://blog.ssdnodes.com/blog/wp-content/uploads/2020/08/what-is-github.png')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By 西园寺世界</div><div class="footer_custom_text">Warning! The FBI is investigating this site.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(()=>{
+  const loadFBComment = () => {
+    document.getElementById('fb-root') ? '' : document.body.insertAdjacentHTML('afterend', '<div id="fb-root"></div>')
+
+    const themeNow = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+    const $fbComment = document.getElementsByClassName('fb-comments')[0]
+    $fbComment.setAttribute('data-colorscheme',themeNow)
+    $fbComment.setAttribute('data-href', 'https://tangze-asuka.github.io/2023/11/24/GitHubPages/')
+
+    if (typeof FB === 'object') {
+      FB.XFBML.parse(document.getElementsByClassName('post-meta-commentcount')[0])
+      FB.XFBML.parse(document.getElementById('post-comment'))
+    }
+    else {
+      let ele = document.createElement('script')
+      ele.setAttribute('src','https://connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v16.0')
+      ele.setAttribute('async', 'true')
+      ele.setAttribute('defer', 'true')
+      ele.setAttribute('crossorigin', 'anonymous')
+      ele.setAttribute('id', 'facebook-jssdk')
+      document.getElementById('fb-root').insertAdjacentElement('afterbegin',ele)
+    }
+  }
+
+  const fbModeChange = theme => {
+    const $fbComment = document.getElementsByClassName('fb-comments')[0]
+    if ($fbComment && typeof FB === 'object') {
+      $fbComment.setAttribute('data-colorscheme',theme)
+      FB.XFBML.parse(document.getElementById('post-comment'))
+    }
+  }
+
+  btf.addGlobalFn('themeChange', fbModeChange, 'facebook_comments')
+
+  if ('Facebook Comments' === 'Facebook Comments' || !false) {
+    if (false) btf.loadComment(document.querySelector('#post-comment .fb-comments'), loadFBComment)
+    else loadFBComment()
+  } else {
+    window.loadOtherComment = loadFBComment
+  }
+})()</script></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
